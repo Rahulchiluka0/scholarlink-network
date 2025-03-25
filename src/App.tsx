@@ -19,6 +19,7 @@ import Timetable from "./pages/student/Timetable";
 import Grades from "./pages/student/Grades";
 import Assignments from "./pages/student/Assignments";
 import Messages from "./pages/student/Messages";
+import Profile from "./pages/student/Profile";
 
 // Parent routes
 import ParentDashboard from "./pages/parent/Dashboard";
@@ -48,6 +49,7 @@ const App = () => (
         <Route path="/student/grades" element={<Grades />} />
         <Route path="/student/assignments" element={<Assignments />} />
         <Route path="/student/messages" element={<Messages />} />
+        <Route path="/student/profile" element={<Profile />} />
         
         {/* Parent routes */}
         <Route path="/parent" element={<ParentDashboard />} />

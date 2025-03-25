@@ -217,12 +217,22 @@ const MainLayout = ({ children, userRole = 'admin' }: MainLayoutProps) => {
                 {userMenuOpen && (
                   <div className="absolute right-0 mt-2 w-48 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none animate-scale-in">
                     <div className="py-1">
-                      <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                        <div className="flex items-center">
-                          <User size={16} className="mr-2" />
-                          <span>Profile</span>
-                        </div>
-                      </a>
+                      {userRole === 'student' && (
+                        <Link to="/student/profile" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                          <div className="flex items-center">
+                            <User size={16} className="mr-2" />
+                            <span>Profile</span>
+                          </div>
+                        </Link>
+                      )}
+                      {userRole !== 'student' && (
+                        <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                          <div className="flex items-center">
+                            <User size={16} className="mr-2" />
+                            <span>Profile</span>
+                          </div>
+                        </a>
+                      )}
                       <button 
                         onClick={handleLogout}
                         className="w-full text-left block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
