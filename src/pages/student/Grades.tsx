@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import MainLayout from '@/components/layout/MainLayout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -200,9 +199,13 @@ const Grades = () => {
                         name="Number of Courses" 
                         radius={[4, 4, 0, 0]}
                         barSize={30}
+                        fill="#4CAF50"
                       >
                         {gradeDistributionData.map((entry, index) => (
-                          <Cell key={`cell-${index}`} fill={barColors[entry.grade]} />
+                          <rect
+                            key={`cell-${index}`}
+                            fill={barColors[entry.grade]}
+                          />
                         ))}
                       </Bar>
                     </BarChart>
