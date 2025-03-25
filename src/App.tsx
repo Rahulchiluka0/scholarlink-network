@@ -28,6 +28,11 @@ import Profile from "./pages/student/Profile";
 
 // Parent routes
 import ParentDashboard from "./pages/parent/Dashboard";
+import Children from "./pages/parent/Children";
+import Progress from "./pages/parent/Progress";
+import Payments from "./pages/parent/Payments";
+import ParentAttendance from "./pages/parent/Attendance";
+import ParentMessages from "./pages/parent/Messages";
 
 const queryClient = new QueryClient();
 
@@ -63,6 +68,11 @@ const App = () => (
         
         {/* Parent routes */}
         <Route path="/parent" element={<ParentDashboard />} />
+        <Route path="/parent/children" element={<Children />} />
+        <Route path="/parent/progress" element={<Progress />} />
+        <Route path="/parent/payments" element={<Payments />} />
+        <Route path="/parent/attendance" element={<ParentAttendance />} />
+        <Route path="/parent/messages" element={<ParentMessages />} />
         
         {/* Catch-all route */}
         <Route path="*" element={<NotFound />} />

@@ -4,7 +4,7 @@ import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { 
   Menu, X, Bell, MessageSquare, User, LogOut, 
   ChevronDown, Search, Home, BookOpen, CalendarDays,
-  Award, FileText
+  Award, FileText, Users, DollarSign, TrendingUp, Calendar
 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
@@ -48,10 +48,10 @@ const MainLayout = ({ children, userRole = 'admin' }: MainLayoutProps) => {
       case 'teacher':
         return [
           { name: 'Dashboard', path: '/teacher', icon: Home },
-          { name: 'Classes', path: '/teacher/classes', icon: User },
+          { name: 'Classes', path: '/teacher/classes', icon: Users },
           { name: 'Students', path: '/teacher/students', icon: User },
-          { name: 'Attendance', path: '/teacher/attendance', icon: User },
-          { name: 'Grades', path: '/teacher/grades', icon: User },
+          { name: 'Attendance', path: '/teacher/attendance', icon: Calendar },
+          { name: 'Grades', path: '/teacher/grades', icon: Award },
           { name: 'Messages', path: '/teacher/messages', icon: MessageSquare },
         ];
       case 'student':
@@ -66,11 +66,11 @@ const MainLayout = ({ children, userRole = 'admin' }: MainLayoutProps) => {
       case 'parent':
         return [
           { name: 'Dashboard', path: '/parent', icon: Home },
-          { name: 'Children', path: '/parent/children', icon: User },
-          { name: 'Attendance', path: '/parent/attendance', icon: User },
-          { name: 'Progress', path: '/parent/progress', icon: User },
+          { name: 'Children', path: '/parent/children', icon: Users },
+          { name: 'Progress', path: '/parent/progress', icon: TrendingUp },
+          { name: 'Attendance', path: '/parent/attendance', icon: Calendar },
+          { name: 'Payments', path: '/parent/payments', icon: DollarSign },
           { name: 'Messages', path: '/parent/messages', icon: MessageSquare },
-          { name: 'Payments', path: '/parent/payments', icon: User },
         ];
       default:
         return [];
