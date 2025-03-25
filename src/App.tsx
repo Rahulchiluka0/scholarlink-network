@@ -11,6 +11,11 @@ import AdminDashboard from "./pages/admin/Dashboard";
 
 // Teacher routes
 import TeacherDashboard from "./pages/teacher/Dashboard";
+import TeacherClasses from "./pages/teacher/Classes";
+import TeacherStudents from "./pages/teacher/Students";
+import TeacherGrades from "./pages/teacher/Grades";
+import TeacherAttendance from "./pages/teacher/Attendance";
+import TeacherMessages from "./pages/teacher/Messages";
 
 // Student routes
 import StudentDashboard from "./pages/student/Dashboard";
@@ -41,6 +46,11 @@ const App = () => (
         
         {/* Teacher routes */}
         <Route path="/teacher" element={<TeacherDashboard />} />
+        <Route path="/teacher/classes" element={<TeacherClasses />} />
+        <Route path="/teacher/students" element={<TeacherStudents />} />
+        <Route path="/teacher/grades" element={<TeacherGrades />} />
+        <Route path="/teacher/attendance" element={<TeacherAttendance />} />
+        <Route path="/teacher/messages" element={<TeacherMessages />} />
         
         {/* Student routes */}
         <Route path="/student" element={<StudentDashboard />} />
