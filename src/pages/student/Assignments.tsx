@@ -79,7 +79,7 @@ const Assignments = () => {
   ];
 
   const formatDate = (dateString) => {
-    const options = { year: 'numeric', month: 'short', day: 'numeric' };
+    const options = { year: 'numeric', month: 'short', day: 'numeric' } as const;
     return new Date(dateString).toLocaleDateString('en-US', options);
   };
 
