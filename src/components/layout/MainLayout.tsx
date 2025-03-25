@@ -4,7 +4,8 @@ import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { 
   Menu, X, Bell, MessageSquare, User, LogOut, 
   ChevronDown, Search, Home, BookOpen, CalendarDays,
-  Award, FileText, Users, DollarSign, TrendingUp, Calendar
+  Award, FileText, Users, DollarSign, TrendingUp, Calendar,
+  Settings, BarChart, BookOpen as Book
 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
@@ -38,12 +39,12 @@ const MainLayout = ({ children, userRole = 'admin' }: MainLayoutProps) => {
       case 'admin':
         return [
           { name: 'Dashboard', path: '/admin', icon: Home },
-          { name: 'Users', path: '/admin/users', icon: User },
-          { name: 'Classes', path: '/admin/classes', icon: User },
-          { name: 'Subjects', path: '/admin/subjects', icon: User },
-          { name: 'Timetables', path: '/admin/timetables', icon: User },
-          { name: 'Reports', path: '/admin/reports', icon: User },
-          { name: 'Settings', path: '/admin/settings', icon: User },
+          { name: 'Users', path: '/admin/users', icon: Users },
+          { name: 'Classes', path: '/admin/classes', icon: Book },
+          { name: 'Subjects', path: '/admin/subjects', icon: BookOpen },
+          { name: 'Timetables', path: '/admin/timetables', icon: CalendarDays },
+          { name: 'Reports', path: '/admin/reports', icon: BarChart },
+          { name: 'Settings', path: '/admin/settings', icon: Settings },
         ];
       case 'teacher':
         return [

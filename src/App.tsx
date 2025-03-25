@@ -8,6 +8,12 @@ import NotFound from "./pages/NotFound";
 
 // Admin routes
 import AdminDashboard from "./pages/admin/Dashboard";
+import Users from "./pages/admin/Users";
+import AdminClasses from "./pages/admin/Classes";
+import Subjects from "./pages/admin/Subjects";
+import Timetables from "./pages/admin/Timetables";
+import Reports from "./pages/admin/Reports";
+import Settings from "./pages/admin/Settings";
 
 // Teacher routes
 import TeacherDashboard from "./pages/teacher/Dashboard";
@@ -48,6 +54,12 @@ const App = () => (
         
         {/* Admin routes */}
         <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/admin/users" element={<Users />} />
+        <Route path="/admin/classes" element={<AdminClasses />} />
+        <Route path="/admin/subjects" element={<Subjects />} />
+        <Route path="/admin/timetables" element={<Timetables />} />
+        <Route path="/admin/reports" element={<Reports />} />
+        <Route path="/admin/settings" element={<Settings />} />
         
         {/* Teacher routes */}
         <Route path="/teacher" element={<TeacherDashboard />} />
