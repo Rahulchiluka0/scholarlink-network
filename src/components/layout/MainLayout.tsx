@@ -1,9 +1,10 @@
 
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { 
   Menu, X, Bell, MessageSquare, User, LogOut, 
-  ChevronDown, Search, Home
+  ChevronDown, Search, Home, BookOpen, CalendarDays,
+  Award, FileText
 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
@@ -19,6 +20,7 @@ const MainLayout = ({ children, userRole = 'admin' }: MainLayoutProps) => {
   const [notificationsOpen, setNotificationsOpen] = useState(false);
   const { toast } = useToast();
   const navigate = useNavigate();
+  const location = useLocation();
   
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
   
@@ -55,10 +57,10 @@ const MainLayout = ({ children, userRole = 'admin' }: MainLayoutProps) => {
       case 'student':
         return [
           { name: 'Dashboard', path: '/student', icon: Home },
-          { name: 'Courses', path: '/student/courses', icon: User },
-          { name: 'Timetable', path: '/student/timetable', icon: User },
-          { name: 'Grades', path: '/student/grades', icon: User },
-          { name: 'Assignments', path: '/student/assignments', icon: User },
+          { name: 'Courses', path: '/student/courses', icon: BookOpen },
+          { name: 'Timetable', path: '/student/timetable', icon: CalendarDays },
+          { name: 'Grades', path: '/student/grades', icon: Award },
+          { name: 'Assignments', path: '/student/assignments', icon: FileText },
           { name: 'Messages', path: '/student/messages', icon: MessageSquare },
         ];
       case 'parent':
@@ -107,17 +109,20 @@ const MainLayout = ({ children, userRole = 'admin' }: MainLayoutProps) => {
           {/* Navigation */}
           <nav className="flex-1 overflow-y-auto py-4 px-2">
             <ul className="space-y-1">
-              {navLinks.map((link) => (
-                <li key={link.path}>
-                  <a 
-                    href={link.path} 
-                    className="flex items-center space-x-3 nav-link"
-                  >
-                    <link.icon size={18} />
-                    <span>{link.name}</span>
-                  </a>
-                </li>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = location.pathname === link.path;
+                return (
+                  <li key={link.path}>
+                    <Link 
+                      to={link.path} 
+                      className={`flex items-center space-x-3 ${isActive ? 'nav-link-active' : 'nav-link'}`}
+                    >
+                      <link.icon size={18} />
+                      <span>{link.name}</span>
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </nav>
           

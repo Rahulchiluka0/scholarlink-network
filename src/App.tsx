@@ -14,6 +14,11 @@ import TeacherDashboard from "./pages/teacher/Dashboard";
 
 // Student routes
 import StudentDashboard from "./pages/student/Dashboard";
+import Courses from "./pages/student/Courses";
+import Timetable from "./pages/student/Timetable";
+import Grades from "./pages/student/Grades";
+import Assignments from "./pages/student/Assignments";
+import Messages from "./pages/student/Messages";
 
 // Parent routes
 import ParentDashboard from "./pages/parent/Dashboard";
@@ -38,6 +43,11 @@ const App = () => (
         
         {/* Student routes */}
         <Route path="/student" element={<StudentDashboard />} />
+        <Route path="/student/courses" element={<Courses />} />
+        <Route path="/student/timetable" element={<Timetable />} />
+        <Route path="/student/grades" element={<Grades />} />
+        <Route path="/student/assignments" element={<Assignments />} />
+        <Route path="/student/messages" element={<Messages />} />
         
         {/* Parent routes */}
         <Route path="/parent" element={<ParentDashboard />} />
