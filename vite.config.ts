@@ -25,4 +25,9 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  // Add this to ensure client-side routing works in production
+  preview: {
+    port: 8080,
+    host: "::",
+  },
 }));
